@@ -170,10 +170,13 @@ const checkWin = () => {
                 playingGrid.classList.remove("show");
                 resultBox.classList.add("show");
             }, 2000);
-            winningText.innerHTML = `Player <p> ${playerSign} </p> won the game!` ; // sets winning text in result box
-            
 
-        }else if(gridBoxes[0].id !== "" && gridBoxes[1].id !== ""  && gridBoxes[2].id !== "" && gridBoxes[3].id !== "" && gridBoxes[4].id !== "" && 
+            winningText.innerHTML = `Player <p> ${playerSign} </p> won the game!` ; // sets winning text in result box
+
+        }
+    });
+    
+    if(gridBoxes[0].id !== "" && gridBoxes[1].id !== ""  && gridBoxes[2].id !== "" && gridBoxes[3].id !== "" && gridBoxes[4].id !== "" && 
         gridBoxes[5].id !== "" && gridBoxes[6].id !== "" && gridBoxes[7].id !== "" && gridBoxes[8].id !== "" && !winner ) // Match Draw case
         { 
 
@@ -190,8 +193,6 @@ const checkWin = () => {
             }, 1000);
             winningText.innerHTML = `Its a Draw!!` ;
         }
-
-    });
 }
 
 replayBtn.onclick = () => { // reload button refreshes the screen
