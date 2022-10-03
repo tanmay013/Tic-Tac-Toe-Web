@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Game Mode Selection options */
+
+/* basic menu positioning code */
+.GameModeSelection-Box, .XoSelection-Box, .playing-grid, .result-box
+{
+    position: absolute;
+    top:40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    box-shadow:0 0 .25em rgba(0,0,0,.25);
+}
+
+/* menu hiding menu */
+.GameModeSelection-Box.hide
+{
+    opacity: 0;
+    pointer-events: none;
+    transform:translate(-50%, -50%) scale(0.9);
+}
+
+/* basic menu design code */
+.GameModeSelection-Box, .XoSelection-Box
+{
+    background: #F7F7F7;
+    padding: 20px 25px 25px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+
+/* menu heading (Tic tac toe heading)*/
+.GameModeSelection-Box header,
+.XoSelection-Box header
+{
+    font-size: 55px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #F7F7F7;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* menu sub heading design (selection line) */
+.GameModeSelection-Box .gmContent .gmTitle,
+.XoSelection-Box .content .title
+{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+/* Menu Selection Button Positioning code */
+.GameModeSelection-Box .gmContent .gmOptions,
+.XoSelection-Box .content .options
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* menu selection button design code */
+.GameModeSelection-Box .gmContent .gmOptions button,
+.XoSelection-Box .content .options button
+{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+    background-color: #005248;
+    border-radius: 5px;
+    color:#F7F7F7;
+    cursor: pointer;
+    transform: all 0.3s ease;
+}
+
+/* menu selection button hover design code */
+.GameModeSelection-Box .gmContent .gmOptions button:hover,
+.XoSelection-Box .content .options button:hover
+{
+    transform: scale(0.96);
+}
+
+/* code to make butttons seperate by adding gap in between (First Button) */
+.GameModeSelection-Box .gmContent .gmOptions .SinglePlayer,
+.XoSelection-Box .content .options .playerX
+{
+    margin-right: 5px;
+}
+
+/* code to make butttons seperate by adding gap in between (Second Button) */
+.GameModeSelection-Box .gmContent .gmOptions .MultiPlayer,
+.XoSelection-Box .content .options .playerX
+{
+    margin-left: 5px;
+}
+
+
+/* X-O Selection options */
+
+/* X-O selection box visibility (default hiding) */
+.XoSelection-Box
+{
+    opacity: 0;
+    pointer-events: none;
+    transform:translate(-50%, -50%) scale(0.9);
+}
+
+/* X-O selection box visibility (show on click)  */
+.XoSelection-Box.show
+{
+    opacity: 1;
+    pointer-events: auto;
+    transform:translate(-50%, -50%) scale(1);
+}
+
+
+/* Player Board Grid */
+
+/* Playing grid visibility (default Hidden) */
+.playing-grid{
+    opacity: 0;
+    pointer-events: none;
+    transform:translate(-50%, -50%) scale(0.9);
+    box-shadow:none;
+}
+
+/* Playing grid visibility (show on click) */
+.playing-grid.show
+{
+    opacity: 1;
+    pointer-events: auto;
+    transform:translate(-50%, -50%) scale(1);
+}
+
+
+/* Playing Grid main box design (grid + turn box) */
+.playing-grid .details
+{
+    background-color: #F9F9F9;
+    padding: 8px;
+    border-radius:5px;
+    margin-bottom: 20px;
+}
+
+/* Turn Box options */
+.playing-grid .details .players
+{
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-around;
+}
+
+/* Turn Box text options designs */
+.playing-grid .details .players span
+{
+    width: 100%;
+    color: #005248;
+    padding: 7px 0px;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: 600;
+    cursor:default;
+    text-align: center;
+    position: relative;
+    z-index: 5;    
+    transition: all 0.3s ease;
+}
+
+/* Turn Slider color default options */
+.playing-grid .details span:first-child
+{
+    color:#F9F9F9;
+}
+
+/* Turn Slider Main color height and slider options design */
+.playing-grid .details .slider
+{
+    position: absolute;
+    background: #005248;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 50%;
+    border-radius: 5px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Grid display as flex to make a grid form */
+.playing-grid .play-area section
+{
+    display:flex;
+}
+
+/* Grid boxes desgin */
+.playing-grid .play-area section span
+{
+    display: block;
+    margin:2px;
+    height: 100px;
+    width:100px;
+    background: #F7F7F7;
+    border-radius: 5px;
+    font-size:40px;
+    text-align: center;
+    line-height: 80px;
+    color: #8685EF;
+    
+}
+
+/* slider move to xplayer position text set as green*/
+.players.active span:first-child
+{
+    color:#005248;
+}
+
+/* set oplayer option  color to white */
+.players.active span:nth-child(2)
+{
+    color:#F7F7F7;
+}
+
+/* Moves slider to oplayer */
+.players.active .slider
+{
+    left:50%;
+}
+
+
+
+/* Stripe Line */
+
+.playing-grid .line
+{  
+    background-color: black;
+    height: 310px;
+    width: 2px;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.playing-grid .line.show
+{
+    opacity: 1;
+}
+
+
+
+/* Result Box*/
+
+/* Box to show the Winner (results) basic design and hidden by default */
+.result-box
+{
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 350px;
+    width: 100%;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transform:translate(-50%, -50%) scale(0.9);
+}    
+
+/* Show This box when the game is over */
+.result-box.show
+{
+    opacity: 1;
+    pointer-events: auto;
+    transform:translate(-50%, -50%) scale(1);
+}
+
+/* Text deesign of result box (Winning text set in javascript) */
+.result-box .won-text
+{
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+
+/* Makes text of won player slightly bolder */
+.result-box .won-text p{
+    font-weight: 600;
+    margin: 0 5px;
+}
+
+/* Design of replay button in result box */
+.result-box .btn
+{
+    display: flex;
+    margin-top: 22px;
+    justify-content: center;
+}
+
+/* Reset button at result box design */
+.result-box .btn button
+{   
+    font-size: 20px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    background-color: #005248;
+    border-radius: 5px;
+    color:#fff;
+    cursor: pointer;
+    transform: all 0.3s ease;
+}
+
+
+/* Made By Tanmay Pandey */
+.watermark
+{
+    position: fixed;
+    bottom: 0.5%;
+    right: 0.5%;
+    padding:2px 7px;
+    color: black;
+    background-color: #F7F7F7;
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px black solid;
+    border-radius: 5px;
+}
+
+/* To Change Color of my name */
+.watermark p
+{
+    display: inline;
+    color:#FF865E;
+}
+
+/* Animated backgorund Bootstrap Code from free frontend.com*/
+html {
+    height:100%;
+  }
+  
+  body {
+    margin:0;
+  }
+  
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+  
+  h1 {
+    font-family:monospace;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }

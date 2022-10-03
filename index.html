@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+       <meta charset="UTF-8">
+       <title> Tic-Tac-Toe Game </title>
+       <link rel="stylesheet" href="styles.css"> 
+    </head>
+
+    <body>
+
+        <!-- Animated Background HTML code Bootstrap from freefreontend-->
+
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+
+        <!--Game Mode Select : 1player, 2player-->
+
+        <div class="GameModeSelection-Box">
+            <header> Tic Tac Toe </header>
+            <div class="gmContent">
+                <div class="gmTitle"> Please select the game mode you want to play. </div>
+                <div class="gmOptions">
+                    <button class="SinglePlayer"> Single Player </button>
+                    <button class="MultiPlayer"> Multi Player </button>
+                </div>
+            </div>
+        </div> 
+
+        <!--XO Selection Menu-->
+
+        <div class="XoSelection-Box">
+            <header> Tic Tac Toe </header>
+            <div class="content">
+                <div class="title"> Select which side you want to be ? </div>
+                <div class="options">
+                    <button class="playerX"> Player (X) </button>
+                    <button class="playerO"> Player (O) </button>
+                </div>
+            </div>
+        </div> 
+
+        <!-- Game Board Grid -->
+
+        <div class="playing-grid">
+
+            <div class="details">
+                <dev class="players">
+                    <span class="Xturn active">X's Turn</span>
+                    <span class="Oturn">O's Turn</span>
+                    <div class="slider"></div>
+                </dev>
+            </div>
+            <div class="line"></div>
+            <div class="play-area">
+                <section>
+                    <span class="box0" id=""></span>
+                    <span class="box1" id=""></span>
+                    <span class="box2" id=""></span>
+                </section>
+                <section>
+                    <span class="box3" id=""></span>
+                    <span class="box4" id=""></span>
+                    <span class="box5" id=""></span>
+                </section>
+                <section>
+                    <span class="box6" id=""></span>
+                    <span class="box7" id=""></span>
+                    <span class="box8" id=""></span>
+                </section>
+            </div>
+        </div>
+
+        <!-- Result Box -->
+
+        <div class="result-box">
+            <div class="won-text"></div>
+            <div class="btn">
+                <button>Replay</button>
+            </div>
+        </div>
+        <script src="scripts.js" type="text/javascript"></script>
+        
+        <div class="watermark">
+            Made By: <p> Tanmay Pandey </p>
+        </div>
+    </body>
+
+
+
+
+</html>
