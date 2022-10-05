@@ -12,6 +12,7 @@ const winningText = resultBox.querySelector('.won-text');
 const replayBtn = resultBox.querySelector('button');
 
 var splayer= true;
+let width = screen.width;
 //when the site is loaded perform the following (includes single and multiplayer options and x-o player selection options)
 window.onload = () => {
     
@@ -30,7 +31,7 @@ window.onload = () => {
     //when multi player button is clicked 
     MultiPlayerBtn.onclick = () => {
         GameModeSelectionBox.classList.add('hide'); //hide the game mode selection menu
-        XoSelectionBox.classList.add('show');  //show the x-o selection menu
+        playingGrid.classList.add('show');  //show the x-o selection menu
         splayer = false;
     }
 
@@ -140,14 +141,14 @@ function ComputerMove(computerTurn)
 
 const checkWin = () => {
     let wins = [
-        [0,1,2, 153, -110, 90],
-        [3,4,5, 153, -10, 90],
-        [6,7,8, 153, 95, 90],
-        [0,3,6, 51, 1, 0],
-        [1,4,7, 155, 1, 0],
-        [2,5,8, 260, 1, 0],
-        [0,4,8, 157, -3, 135],
-        [2,4,6, 155, -4, 45]
+        [0,1,2, 153, -110, 90, 303, -215],
+        [3,4,5, 153, -10, 90, 303, -10],
+        [6,7,8, 153, 95, 90, 303, 194],
+        [0,3,6, 51, 1, 0, 100, 1],
+        [1,4,7, 155, 1, 0, 304, 1],
+        [2,5,8, 260, 1, 0, 508, 1],
+        [0,4,8, 157, -3, 135, 305, -11],
+        [2,4,6, 155, -4, 45, 300, -10]
     ]; // array containing all cases when player will won and x,y and rotation for stripe line
 
     wins.forEach(e => {
@@ -162,9 +163,17 @@ const checkWin = () => {
                 playingGrid.style.pointerEvents = "none"; // disable grid sinch game is over. multiplayer disable.
             } 
 
-            document.querySelector(".line").classList.add("show"); //show to stripe line
-            document.querySelector(".line").style.transform = `translate(${e[3]}px, ${e[4]}px) rotate(${e[5]}deg)`; //set the striping line position
-            winner = true;
+            if(width > 1000)
+            {
+                console.log(width);
+                document.querySelector(".line").classList.add("show"); //show to stripe line
+                document.querySelector(".line").style.transform = `translate(${e[3]}px, ${e[4]}px) rotate(${e[5]}deg)`; //set the striping line position    
+            }else{
+                console.log(width)
+                document.querySelector(".line").classList.add("show"); //show to stripe line
+                document.querySelector(".line").style.transform = `translate(${e[6]}px, ${e[7]}px) rotate(${e[5]}deg)`; 
+            }
+           winner = true;
 
             setTimeout(()=>{ //slightly delay to show result
                 playingGrid.classList.remove("show");
