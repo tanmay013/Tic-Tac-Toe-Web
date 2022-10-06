@@ -165,11 +165,9 @@ const checkWin = () => {
 
             if(width > 1000)
             {
-                console.log(width);
                 document.querySelector(".line").classList.add("show"); //show to stripe line
                 document.querySelector(".line").style.transform = `translate(${e[3]}px, ${e[4]}px) rotate(${e[5]}deg)`; //set the striping line position    
             }else{
-                console.log(width)
                 document.querySelector(".line").classList.add("show"); //show to stripe line
                 document.querySelector(".line").style.transform = `translate(${e[6]}px, ${e[7]}px) rotate(${e[5]}deg)`; 
             }
