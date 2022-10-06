@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 *{
     margin: 0;
@@ -36,7 +38,7 @@
     border-radius: 5px;
     max-width: 500px;
     width: 100%;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 
@@ -45,10 +47,10 @@
 .XoSelection-Box header
 {
     font-size: 55px;
-    color:#100F0F;
+    color:#181818;
     font-weight: 600;
     padding-bottom: 10px;
-    border-bottom: 1px solid #F7F7F7;
+    border-bottom: 2px solid #CFD2CF;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -85,7 +87,7 @@
     border-radius: 5px;
     color:#F7F7F7;
     cursor: pointer;
-    transform: all 0.3s ease;
+    transform: all 0.5s ease;
 }
 
 /* menu selection button hover design code */
@@ -179,7 +181,7 @@
     text-align: center;
     position: relative;
     z-index: 5;    
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 /* Turn Slider color default options */
@@ -199,7 +201,7 @@
     width: 50%;
     border-radius: 5px;
     z-index: 2;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 
@@ -225,6 +227,23 @@
     color: #8685EF;
     
 }
+
+.animateXO
+{
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+.playing-grid .play-area section span:hover
+{
+    background: #D2DAFF;
+    
+}
+
 
 /* slider move to xplayer position text set as green*/
 .players.active span:first-child
@@ -256,7 +275,16 @@
     width: 5px;
     position: absolute;
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: all 0.8s ease-in-out;
+    border-radius: 25px;
+    box-shadow:
+    rgba(22, 31, 39, 0.42) 0px 60px 123px -25px,
+    rgba(19, 26, 32, 0.08) 0px 35px 75px -35px;
+    border: 0.5px solid;
+    border-color:
+    rgb(213, 220, 226)
+    rgb(213, 220, 226)
+    rgb(184, 194, 204);
 }
 
 .playing-grid .line.show
@@ -325,7 +353,7 @@
     border-radius: 5px;
     color:#fff;
     cursor: pointer;
-    transform: all 0.3s ease;
+    transform: all 0.5s ease;
 }
 
 

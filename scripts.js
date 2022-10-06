@@ -56,14 +56,14 @@ var winner = false; // to prevent both draw and win conditions at last case
 function clickedGridBox(element){
     if(players.classList.contains('player')) // O is selected by Player1 or player
     {
-        element.innerHTML = `<h1>${playerOIcon}</h1>`; // set grid text as player icon O
+        element.innerHTML = `<h1 class="animateXO">${playerOIcon}</h1>`; // set grid text as player icon O
         players.classList.remove("active"); //player turn is completed  so set slider to X
         playerSign = "O"; // O is selected by player so store it in id
         element.setAttribute("id", playerSign); // set clicked box id as O  
 
     }else // X is selected by the Player1 or player
     {
-        element.innerHTML = `<h1>${playerXIcon}</h1>`; // set grid text as player icon X
+        element.innerHTML = `<h1 class="animateXO">${playerXIcon}</h1>`; // set grid text as player icon X
         players.classList.add("active"); //player turn is completed
         element.setAttribute("id", playerSign); // set clicked box id as X
     }
@@ -118,14 +118,14 @@ function ComputerMove(computerTurn)
         {
             if(players.classList.contains('player')) // O is selected by Player1 or player so cpu will select X
             {
-                gridBoxes[randomBlock].innerHTML = `<h1>${playerXIcon}</h1>`;
+                gridBoxes[randomBlock].innerHTML = `<h1 class="animateXO">${playerXIcon}</h1>`;
                 players.classList.add("active"); // CPUs turn is completed so set slider to O
                 playerSign = 'X';
                 gridBoxes[randomBlock].setAttribute("id", playerSign);
         
             }else // X is selected by the Player1 or player so cpu will select O
             {
-                gridBoxes[randomBlock].innerHTML = `<h1>${playerOIcon}</h1>`;
+                gridBoxes[randomBlock].innerHTML = `<h1 class="animateXO">${playerOIcon}</h1>`;
                 players.classList.remove("active"); // CPUs turn is completed
                 gridBoxes[randomBlock].setAttribute("id", playerSign);
             }
@@ -178,7 +178,7 @@ const checkWin = () => {
             setTimeout(()=>{ //slightly delay to show result
                 playingGrid.classList.remove("show");
                 resultBox.classList.add("show");
-            }, 2000);
+            }, 2300);
 
             winningText.innerHTML = `Player <p> ${playerSign} </p> won the game!` ; // sets winning text in result box
 
